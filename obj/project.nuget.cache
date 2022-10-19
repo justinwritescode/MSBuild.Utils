@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "xU++BYntsrvOozItF5df9MCmGZGjzZiCpKys4zslyF8dVrVoPsGRTMr+P7LGdi08KNNreUswoqeeTQdlIJGoOw==",
+  "success": true,
+  "projectFilePath": "/Users/david/GitHub/justinwritescode/src/MSBuild.Utils/MSBuild.Utils.slnproj",
+  "expectedPackageFiles": [
+    "/Users/david/.nuget/packages/enumerationclassgenerator/0.0.3/enumerationclassgenerator.0.0.3.nupkg.sha512",
+    "/Users/david/.nuget/packages/fluentbuilder/0.7.1/fluentbuilder.0.7.1.nupkg.sha512",
+    "/Users/david/.nuget/packages/gitinfo/2.2.0/gitinfo.2.2.0.nupkg.sha512",
+    "/Users/david/.nuget/packages/justinwritescode.common.restorecommonfiles/0.0.1-local/justinwritescode.common.restorecommonfiles.0.0.1-local.nupkg.sha512",
+    "/Users/david/.nuget/packages/justinwritescode.versioning/0.0.0-alpha.0.28/justinwritescode.versioning.0.0.0-alpha.0.28.nupkg.sha512",
+    "/Users/david/.nuget/packages/microsoft.build.tasks.git/1.1.1/microsoft.build.tasks.git.1.1.1.nupkg.sha512",
+    "/Users/david/.nuget/packages/microsoft.sourcelink.common/1.1.1/microsoft.sourcelink.common.1.1.1.nupkg.sha512",
+    "/Users/david/.nuget/packages/microsoft.sourcelink.github/1.1.1/microsoft.sourcelink.github.1.1.1.nupkg.sha512",
+    "/Users/david/.nuget/packages/microsoft.visualstudio.slngen/8.5.17/microsoft.visualstudio.slngen.8.5.17.nupkg.sha512",
+    "/Users/david/.nuget/packages/minver/4.1.0/minver.4.1.0.nupkg.sha512",
+    "/Users/david/.nuget/packages/nugetizer/0.9.0/nugetizer.0.9.0.nupkg.sha512",
+    "/Users/david/.nuget/packages/stef.validation/0.1.0/stef.validation.0.1.0.nupkg.sha512",
+    "/Users/david/.nuget/packages/thisassembly/1.0.9/thisassembly.1.0.9.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "MSBuild.Utils depends on JustinWritesCode.Common.RestoreCommonFiles (>= 0.0.0-alpha.0.31) but JustinWritesCode.Common.RestoreCommonFiles 0.0.0-alpha.0.31 was not found. An approximate best match of JustinWritesCode.Common.RestoreCommonFiles 0.0.1-Local was resolved.",
+      "libraryId": "JustinWritesCode.Common.RestoreCommonFiles",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MSBuild.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:ThisAssembly">
+            <summary>Provides access to the current assembly information.</summary>
+            <summary>
+            Provides access to the current assembly information as pure constants, 
+             without requiring reflection.
+            </summary>
+            <summary>
+            Provides access to the current assembly information as pure constants, 
+             without requiring reflection.
+            </summary>
+            <summary>
+            Provides access to the current assembly information as pure constants, 
+             without requiring reflection.
+            </summary>
+        </member>
+        <member name="T:ThisAssembly.Git">
+            <summary>Provides access to the git information for the current assembly.</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.IsDirty">
+            <summary>IsDirty: false</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.IsDirtyString">
+            <summary>IsDirtyString: false</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.RepositoryUrl">
+            <summary>Repository URL: https://github.com/justinwritescode/MSBuild.Utils.git</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Branch">
+            <summary>Branch: main</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Commit">
+            <summary>Commit: cb0f93e</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Sha">
+            <summary>Sha: cb0f93ef025ec90af2172ef47e53df2e00989e23</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.CommitDate">
+            <summary>Commit date: 2022-10-18T16:20:21-04:00</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Commits">
+            <summary>Commits on top of base version: 1</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Tag">
+            <summary>Tag: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseTag">
+            <summary>Base tag: </summary>
+        </member>
+        <member name="T:ThisAssembly.Git.BaseVersion">
+            <summary>Provides access to the base version information used to determine the <see cref="T:ThisAssembly.Git.SemVer" />.</summary>      
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Major">
+            <summary>Major: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Minor">
+            <summary>Minor: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Patch">
+            <summary>Patch: 0</summary>
+        </member>
+        <member name="T:ThisAssembly.Git.SemVer">
+            <summary>Provides access to SemVer information for the current assembly.</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Major">
+            <summary>Major: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Minor">
+            <summary>Minor: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Patch">
+            <summary>Patch: 1</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Label">
+            <summary>Label: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.DashLabel">
+            <summary>Label with dash prefix: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Source">
+            <summary>Source: Default</summary>
+        </member>
+        <member name="T:ThisAssembly.Info">
+            <summary>
+            Gets the AssemblyInfo attributes.
+            </summary>
+        </member>
+        <member name="T:ThisAssembly.Metadata">
+            <summary>
+            Gets the assembly metadata.
+            </summary>
+        </member>
+        <member name="F:ThisAssembly.Metadata.RepositoryUrl">
+            <summary>RepositoryUrl = https://github.com/justinwritescode/MSBuild.Utils.git</summary>
+        </member>
+        <member name="T:ThisAssembly.Project">
+            <summary>
+            Gets the project properties.
+            </summary>
+        </member>
+        <member name="F:ThisAssembly.Project.AssemblyName">
+            <summary>AssemblyName = MSBuild.Utils</summary>
+        </member>
+        <member name="F:ThisAssembly.Project.RootNamespace">
+            <summary>RootNamespace = JustinWritesCode.MSBuild.Utils</summary>
+        </member>
+        <member name="F:ThisAssembly.Project.TargetFrameworkIdentifier">
+            <summary>TargetFrameworkIdentifier = .NETStandard</summary>
+        </member>
+        <member name="F:ThisAssembly.Project.TargetFrameworkMoniker">
+            <summary>TargetFrameworkMoniker = .NETStandard,Version=v2.0</summary>
+        </member>
+        <member name="F:ThisAssembly.Project.TargetFrameworkVersion">
+            <summary>TargetFrameworkVersion = v2.0</summary>
+        </member>
+    </members>
+</doc>
