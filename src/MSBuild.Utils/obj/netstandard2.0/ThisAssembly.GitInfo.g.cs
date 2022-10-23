@@ -34,11 +34,11 @@ namespace
     /// <summary>Provides access to the git information for the current assembly.</summary>
     public partial class Git
     {
-      /// <summary>IsDirty: false</summary>
-      public const bool IsDirty = false;
+      /// <summary>IsDirty: true</summary>
+      public const bool IsDirty = true;
 
-      /// <summary>IsDirtyString: false</summary>
-      public const string IsDirtyString = @"false";
+      /// <summary>IsDirtyString: true</summary>
+      public const string IsDirtyString = @"true";
 
       /// <summary>Repository URL: https://github.com/justinwritescode/MSBuild.Utils.git</summary>
       public const string RepositoryUrl = @"https://github.com/justinwritescode/MSBuild.Utils.git";
@@ -46,17 +46,17 @@ namespace
       /// <summary>Branch: main</summary>
       public const string Branch = @"main";
 
-      /// <summary>Commit: cb0f93e</summary>
-      public const string Commit = @"cb0f93e";
+      /// <summary>Commit: 1eb6e83</summary>
+      public const string Commit = @"1eb6e83";
 
-      /// <summary>Sha: cb0f93ef025ec90af2172ef47e53df2e00989e23</summary>
-      public const string Sha = @"cb0f93ef025ec90af2172ef47e53df2e00989e23";
+      /// <summary>Sha: 1eb6e83b8c7db3f3fbd09960c2ebb7a27953e0bb</summary>
+      public const string Sha = @"1eb6e83b8c7db3f3fbd09960c2ebb7a27953e0bb";
 
-      /// <summary>Commit date: 2022-10-18T16:20:21-04:00</summary>
-      public const string CommitDate = @"2022-10-18T16:20:21-04:00";
+      /// <summary>Commit date: 2022-10-19T08:40:24-04:00</summary>
+      public const string CommitDate = @"2022-10-19T08:40:24-04:00";
 
-      /// <summary>Commits on top of base version: 1</summary>
-      public const string Commits = @"1";
+      /// <summary>Commits on top of base version: 2</summary>
+      public const string Commits = @"2";
 
       /// <summary>Tag: </summary>
       public const string Tag = @"";
@@ -86,8 +86,8 @@ namespace
         /// <summary>Minor: 0</summary>
         public const string Minor = @"0";
 
-        /// <summary>Patch: 1</summary>
-        public const string Patch = @"1";
+        /// <summary>Patch: 2</summary>
+        public const string Patch = @"2";
 
         /// <summary>Label: </summary>
         public const string Label = @"";
