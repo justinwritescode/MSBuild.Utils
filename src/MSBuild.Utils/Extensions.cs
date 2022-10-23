@@ -1,7 +1,9 @@
 namespace JustinWritesCode.MSBuild.Utils.Extensions;
 using System.Reflection;
+using Microsoft.Build.Execution;
+using Microsoft.Build.Framework;
 
-public class TaskExtensions
+public static class TaskExtensions
 {
     /// <summary>
     /// Attempts to get the current <see cref="ProjectInstance"/> of the executing task via reflection.
@@ -11,7 +13,8 @@ public class TaskExtensions
     {
         try
         {
-            FieldInfo requestEntryFieldInfo = BuildEngine.GetType().GetField("_requestEntry", BindingFlags.Instance | BindingFlags.NonPublic);
+            MSBTask
+            FieldInfo requestEntryFieldInfo = task.BuildEngine.GetType().GetField("_requestEntry", BindingFlags.Instance | BindingFlags.NonPublic);
 
             if (requestEntryFieldInfo != null && BuildRequestEntryTypeLazy.Value != null && BuildRequestConfigurationTypeLazy.Value != null)
             {

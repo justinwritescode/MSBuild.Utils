@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.Build.Traversal">
  <ItemGroup>
-    <PackageReference Include="JustinWritesCode.Common.RestoreCommonFiles" />
+    <ProjectReference Include="**/*.*proj" />
  </ItemGroup>
 </Project>
