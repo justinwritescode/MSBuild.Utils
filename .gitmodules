@@ -1,0 +1,3 @@
+[submodule "src/MSBuild.EnsureFileHeaders"]
+	path = src/MSBuild.EnsureFileHeaders
+	url = https://github.com/justinwritescode/MSBuild.EnsureFileHeaders.git
