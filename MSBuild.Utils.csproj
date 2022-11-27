@@ -1,0 +1,18 @@
+<!--
+ * MSBuild.Utils.csproj
+ * 
+ *   Created: 2022-10-27-05:34:12
+ *   Modified: 2022-11-11-11:04:07
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.Build.Traversal">
+ <ItemGroup>
+    <ProjectReference Include="**/*.*proj" />
+    <Compile Remove="**/*.cs" />
+ </ItemGroup>
+</Project>
