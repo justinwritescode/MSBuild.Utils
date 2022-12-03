@@ -11,19 +11,14 @@
 -->
 <!-- taken from https://stackoverflow.com/questions/3260913/how-to-access-the-msbuild-command-line-parameters-from-within-the-project-file-b -->
 <Project>
-	<PropertyGroup>
-		<GetCommandLineArgsAssemblyFile Condition="'$(MSBuildProjectName)' == 'GetCommandLineArgs'">$(MSBuildThisFileDirectory)./lib/GetCommandLineArgs.dll</GetCommandLineArgsAssemblyFile>
-		<GetCommandLineArgsAssemblyFile Condition="'$(MSBuildProjectName)' != 'GetCommandLineArgs'">$(MSBuildThisFileDirectory)../lib/GetCommandLineArgs.dll</GetCommandLineArgsAssemblyFile>
-	</PropertyGroup>
-	<UsingTask TaskName="MSBuild.Utils.GetCommandLineArgs" AssemblyFile="$(GetCommandLineArgsAssemblyFile)" />
-	<Target Name="GetCommandLineArgs" Outputs="@(CommandLineArg);$(CommandLineArgs)">
-		<MSBuild.Utils.GetCommandLineArgs>
-			<Output TaskParameter="CommandLineArgs" ItemName="CommandLineArgs" />
-			<Output TaskParameter="FullCommandLine" PropertyName="FullCommandLine" />
-		</MSBuild.Utils.GetCommandLineArgs>
+    <Target Name="GetCommandLineArgs" Outputs="@(CommandLineArg);$(CommandLineArgs)">
+        <MSBuild.Utils.GetCommandLineArgs>
+            <Output TaskParameter="CommandLineArgs" ItemName="CommandLineArgs" />
+            <Output TaskParameter="FullCommandLine" PropertyName="FullCommandLine" />
+        </MSBuild.Utils.GetCommandLineArgs>
 
-		<PropertyGroup>
-			<CommandLineArgs>@(CommandLineArgs, ' ')</CommandLineArgs>
-		</PropertyGroup>
-	</Target>
+        <PropertyGroup>
+            <CommandLineArgs>@(CommandLineArgs, ' ')</CommandLineArgs>
+        </PropertyGroup>
+    </Target>
 </Project>

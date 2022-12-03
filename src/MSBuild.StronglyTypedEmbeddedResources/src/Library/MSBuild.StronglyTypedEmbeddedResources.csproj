@@ -1,0 +1,45 @@
+<!--
+ MSBuild.StronglyTypedEmbeddedResources.csproj
+ 
+   Created: 2022-10-30-11:53:10
+   Modified: 2022-10-30-11:53:10
+ 
+   Author: Justin Chase <justin@justinwritescode.com>
+   
+   Copyright © 2022 Justin Chase, All Rights Reserved
+      License: MIT (https://opensource.org/licenses/MIT)
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableGlobalCodeGenerators>false</EnableGlobalCodeGenerators>
+    <PackageId>MSBuild.StronglyTypedEmbeddedResources</PackageId>
+    <AssemblyName>$(PackageId)</AssemblyName>
+    <RootNamespace>$(PackageId)</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" />
+    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="Microsoft.Build" PrivateAssets="None" VersionOverride="[15.9.20,)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="$(OutputPath)$(AssemblyName).dll" />
+    <PackageFile Include="$(OutputPath)\$(AssemblyName).dll" PackagePath="analyzers/dotnet/cs/$(AssemblyName).dll" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local'">
+    <ProjectReference Include="../../../../../Types/src/Core/ComponentModel/JustinWritesCode.ComponentModel.csproj" />
+    <ProjectReference Include="../../../../../Types/src/Enumerations/Enumeration/JustinWritesCode.Enumerations.Enumeration.csproj" />
+    <ProjectReference Include="../../../../../Types/src/Enumerations/CodeGeneration/JustinWritesCode.Enumerations.CodeGeneration.csproj" TreatAsPackageReference="true" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="../../../../../Types/src/Extensions/System.Extensions.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' != 'Testing' And '$(Configuration)' != 'Local'"> 
+    <PackageReference Include="JustinWritesCode.ComponentModel" />
+    <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" />
+    <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers" PrivateAssets="All" />
+    <PackageReference Include="System.Extensions" />
+  </ItemGroup>
+</Project>

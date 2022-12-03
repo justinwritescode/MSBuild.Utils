@@ -4,39 +4,39 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.Utils", "src\MSBuild.Utils\MSBuild.Utils.csproj", "{FED3CCD6-E468-45DA-9B47-522BE800F9DB}"
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Local|Any CPU = Local|Any CPU
-		Debug|Any CPU = Debug|Any CPU
-		Staging|Any CPU = Staging|Any CPU
-		Release|Any CPU = Release|Any CPU
-		Testing|Any CPU = Testing|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Local|Any CPU.ActiveCfg = Local|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Local|Any CPU.Build.0 = Local|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Staging|Any CPU.Build.0 = Staging|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
-		{19408F55-03E9-4146-91E2-4BAA99C7CE78}.Testing|Any CPU.Build.0 = Testing|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Local|Any CPU.ActiveCfg = Local|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Local|Any CPU.Build.0 = Local|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Staging|Any CPU.Build.0 = Staging|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
-		{FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Testing|Any CPU.Build.0 = Testing|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {ACCFDC74-ED32-4C7B-8B2A-913A069B700E}
-	EndGlobalSection
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Local|Any CPU = Local|Any CPU
+        Debug|Any CPU = Debug|Any CPU
+        Staging|Any CPU = Staging|Any CPU
+        Release|Any CPU = Release|Any CPU
+        Testing|Any CPU = Testing|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Local|Any CPU.ActiveCfg = Local|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Local|Any CPU.Build.0 = Local|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Staging|Any CPU.Build.0 = Staging|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Release|Any CPU.Build.0 = Release|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
+        {19408F55-03E9-4146-91E2-4BAA99C7CE78}.Testing|Any CPU.Build.0 = Testing|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Local|Any CPU.ActiveCfg = Local|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Local|Any CPU.Build.0 = Local|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Staging|Any CPU.Build.0 = Staging|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Release|Any CPU.Build.0 = Release|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
+        {FED3CCD6-E468-45DA-9B47-522BE800F9DB}.Testing|Any CPU.Build.0 = Testing|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+    GlobalSection(ExtensibilityGlobals) = postSolution
+        SolutionGuid = {ACCFDC74-ED32-4C7B-8B2A-913A069B700E}
+    EndGlobalSection
 EndGlobal

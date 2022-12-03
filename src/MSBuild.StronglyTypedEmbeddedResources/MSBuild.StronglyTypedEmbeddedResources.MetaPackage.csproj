@@ -1,0 +1,26 @@
+<!--
+ MSBuild.StronglyTypedEmbeddedResources.slnproj
+ 
+   Created: 2022-10-30-07:52:43
+   Modified: 2022-10-30-07:52:44
+ 
+   Author: Justin Chase <justin@justinwritescode.com>
+   
+   Copyright © 2022 Justin Chase, All Rights Reserved
+      License: MIT (https://opensource.org/licenses/MIT)
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <IncludeInSolutionFile>false</IncludeInSolutionFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <ItemGroup>
+   <ProjectReference Include="**/*proj" />
+   <ProjectReference Remove="./MSBuild.StronglyTypedEmbeddedResources.MetaPackage.csproj" />
+   <Compile Remove="**/*.cs" />
+    <PackageReference Update="Microsoft.Build.Framework" VersionOverride="17.3.2" PrivateAssets="None" IncludeAssets="All" ExcludeAssets="None" />
+    <PackageReference Update="Microsoft.Build.Utilities.Core" VersionOverride="17.3.1" PrivateAssets="None" IncludeAssets="All" ExcludeAssets="None" />
+    <PackageReference Update="Microsoft.Build" VersionOverride="17.3.1" PrivateAssets="None" IncludeAssets="All" ExcludeAssets="None" />
+  </ItemGroup>
+</Project>
