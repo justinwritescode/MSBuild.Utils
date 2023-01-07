@@ -6,48 +6,63 @@
  * 
  *   Author: Justin Chase <justin@justinwritescode.com>
  *   
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
+
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <TargetFrameworks>netstandard2.0</TargetFrameworks>
-        <OutputPath>lib/</OutputPath>
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <Description>Provides a task and a target that put the command line arguments to the MSBuild process into the items and property "CommandLineArgs."</Description>
+      <!-- <TargetFramework>netstandard2.1</TargetFramework> -->
+      <!-- <TargetFramework>netstandard2.0</TargetFramework> -->
+      <TargetFramework>net7.0</TargetFramework>
+      <OutputPath>lib/</OutputPath>
+      <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+      <Description>Provides a task and a target that put the command line arguments to the MSBuild process into the items and property "CommandLineArgs."</Description>
+      <SignAssembly>false</SignAssembly>
     </PropertyGroup>
     <ItemGroup>
-        <PackageTag Include="commandline" />
-        <PackageTag Include="msbuild" />
+      <PackageTag Include="commandline" />
+      <PackageTag Include="msbuild" />
     </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" PrivateAssets="None"  />
-    <PackageReference Include="Microsoft.Build" PrivateAssets="None" VersionOverride="[15.9.20,)" />
-        <ProjectReference Include="../MSBuild.Extensions/MSBuild.Extensions.csproj" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" PrivateAssets="None" />
+    <PackageReference Include="Microsoft.Build.Framework" PrivateAssets="None" />
+    <PackageReference Include="Microsoft.Build" PrivateAssets="None" />
+    <!-- <PackageReference Include="System.AppDomain" VersionOverride="[2.0.9,)" />
+    <PackageReference Include="System.Xml.ReaderWriter" VersionOverride="[4.3.1,)" /> -->
+    <!-- <ProjectReference Include="../MSBuild.Extensions/MSBuild.Extensions.csproj" Condition="'$(Configuration)' != 'Release'" /> -->
+    <!--<PackageReference Include="MSBuild.Extensions" />-->
+    <!-- <ProjectReferemce Include="../MSBuild.Extensions/MSBuild.Extensions.csproj" /> -->
   </ItemGroup>
   <ItemGroup Label="Global Usings">
     <Using Include="Microsoft.Build.Utilities.Task" Alias="MSBTask" />
   </ItemGroup>
-    <ItemGroup>
-        <Content Include="./GetCommandLineArgs.targets" PackagePath="build/GetCommandLineArgs.targets" />
-        <Content Include="$(OutputPath)**/*" PackagePath="lib/%(RecursiveDir)%(Filename)%(Extension)" />
-    </ItemGroup>    
+  <ItemGroup>
+    <Content Include="./GetCommandLineArgs.targets" PackagePath="build/GetCommandLineArgs.targets" />
+    <Content Include="$(OutputPath)**/*" PackagePath="lib/%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>    
   <PropertyGroup>
-        <GetCommandLineArgsAssemblyFile Condition="'$(MSBuildProjectName)' == 'GetCommandLineArgs'">$(MSBuildThisFileDirectory)./lib/GetCommandLineArgs.dll</GetCommandLineArgsAssemblyFile>
-        <GetCommandLineArgsAssemblyFile Condition="'$(MSBuildProjectName)' != 'GetCommandLineArgs'">$(MSBuildThisFileDirectory)../lib/GetCommandLineArgs.dll</GetCommandLineArgsAssemblyFile>
-    </PropertyGroup>
-    <UsingTask TaskName="MSBuild.Utils.GetCommandLineArgs" AssemblyFile="$(GetCommandLineArgsAssemblyFile)" />
-    <!-- <Target Name="ShowCommandLineArgs" AfterTargets="Build">
-        <MSBuild.Utils.GetCommandLineArgs>
-            <Output TaskParameter="CommandLineArgs" ItemName="CommandLineArgs" />
-            <Output TaskParameter="FullCommandLine" PropertyName="CommandLineArgs" />
-        </MSBuild.Utils.GetCommandLineArgs> -->
-        <!-- <Message Importance="High" Text="$CommandLineArgs: $(CommandLineArgs)" /> -->
-        <!-- <Message Importance="High" Text="@CommandLineArgs: @(CommandLineArgs)" /> -->
-        <!-- <Message Importance="High" Text="FullCommandLine: $(FullCommandLine)" /> -->
-    <!-- </Target> -->
-    <!-- <ItemGroup>
-        <PackageFile Include="$(OutputPath)/$(AssemblyName).*" PackagePath="lib/%(Filename)%(Extension)" />
-    </ItemGroup> -->
+    <GetCommandLineArgsAssemblyFile Condition="'$(MSBuildProjectName)' == 'GetCommandLineArgs'">$(MSBuildThisFileDirectory)./lib/GetCommandLineArgs.dll</GetCommandLineArgsAssemblyFile>
+    <GetCommandLineArgsAssemblyFile Condition="'$(MSBuildProjectName)' != 'GetCommandLineArgs'">$(MSBuildThisFileDirectory)../lib/GetCommandLineArgs.dll</GetCommandLineArgsAssemblyFile>
+  </PropertyGroup>
+  <UsingTask TaskName="MSBuild.Utils.GetCommandLineArgs" AssemblyFile="$(GetCommandLineArgsAssemblyFile)" />
+  <Target Name="ShowCommandLineArgs" AfterTargets="Build">
+    <MSBuild.Utils.GetCommandLineArgs>
+        <Output TaskParameter="CommandLineArgs" ItemName="CommandLineArgs" />
+        <Output TaskParameter="FullCommandLine" PropertyName="CommandLineArgs" />
+    </MSBuild.Utils.GetCommandLineArgs>
+    <Message Importance="High" Text="$CommandLineArgs: $(CommandLineArgs)" />
+    <Message Importance="High" Text="@CommandLineArgs: @(CommandLineArgs)" />
+    <Message Importance="High" Text="FullCommandLine: $(FullCommandLine)" />
+  </Target>
+  <ItemGroup>
+    <Reference Include="MSBuild.Extensions" HintPath="../MSBuild.Extensions/lib/netstandard1.5/MSBuild.Extensions.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MSBuild.Extensions\MSBuild.Extensions.csproj">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToPublishDirectory></CopyToPublishDirectory>
+      <SetConfiguration></SetConfiguration>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

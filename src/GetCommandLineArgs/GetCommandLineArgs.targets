@@ -6,12 +6,12 @@
  * 
  *   Author: Justin Chase <justin@justinwritescode.com>
  *   
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 <!-- taken from https://stackoverflow.com/questions/3260913/how-to-access-the-msbuild-command-line-parameters-from-within-the-project-file-b -->
 <Project>
-    <Target Name="GetCommandLineArgs" Outputs="@(CommandLineArg);$(CommandLineArgs)">
+    <!-- <Target Name="GetCommandLineArgs" Outputs="@(CommandLineArg);$(CommandLineArgs)">
         <MSBuild.Utils.GetCommandLineArgs>
             <Output TaskParameter="CommandLineArgs" ItemName="CommandLineArgs" />
             <Output TaskParameter="FullCommandLine" PropertyName="FullCommandLine" />
@@ -20,5 +20,5 @@
         <PropertyGroup>
             <CommandLineArgs>@(CommandLineArgs, ' ')</CommandLineArgs>
         </PropertyGroup>
-    </Target>
+    </Target> -->
 </Project>

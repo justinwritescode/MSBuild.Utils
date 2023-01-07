@@ -1,4 +1,6 @@
 using System.Runtime.CompilerServices;
+using global::System;
+
 internal static class ProjectSourcePath
 {
     private const string myRelativePath = nameof(ProjectSourcePath) + ".cs";
@@ -7,7 +9,7 @@ internal static class ProjectSourcePath
 
     private static string calculatePath()
     {
-        string pathName = GetSourceFilePathName();
+        var pathName = GetSourceFilePathName();
         // Assert(pathName.EndsWith(myRelativePath, StringComparison.Ordinal));
         return pathName.Substring(0, pathName.Length - myRelativePath.Length);
     }

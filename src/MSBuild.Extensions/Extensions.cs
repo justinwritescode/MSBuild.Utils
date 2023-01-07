@@ -2,8 +2,6 @@ namespace MSBuild.Extensions;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Xml;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Execution;
@@ -22,6 +20,16 @@ public static class TaskExtensions
 
     public static Project TryGetProject(this ITask task)
     {
+        string projectFile = task.BuildEngine.ProjectFileOfTaskNode;
+
+        var projectCollection = new ProjectCollection();
+        var project = projectCollection.LoadProject(projectFile);
+
+        foreach (var o in project.AllEvaluatedProperties)
+        {
+            // Use properties
+        }
+
         using(XmlReader projectFileReader = XmlReader.Create(task.BuildEngine.ProjectFileOfTaskNode))
         {
             return new Project(projectFileReader);
@@ -31,25 +39,11 @@ public static class TaskExtensions
     public static IDictionary<string, string> GetAllEvaluatedProperties(this ITask task)
     {
         var projectXml = File.ReadAllText(task.BuildEngine.ProjectFileOfTaskNode);
-        using(var xmlReader = new System.Xml.XmlTextReader(new StringReader(projectXml)))
+        using(var xmlReader = XmlReader.Create(new StringReader(projectXml)))
         {
             var project = new Project(xmlReader);
             return new ProjectPropertiesDictionary(project);
         }
-        // var _allEvaluatedProperties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        // // using(XmlReader projectFileReader = XmlReader.Create(task.BuildEngine.ProjectFileOfTaskNode))
-        // // {
-        //     Project project = new Project(task.BuildEngine.ProjectFileOfTaskNode);
-
-        //     foreach(ProjectProperty property in project.AllEvaluatedProperties)
-        //     {
-        //         string propertyName = property.Name;
-        //         string propertyValue = property.EvaluatedValue;
-
-        //         _allEvaluatedProperties[propertyName] = propertyValue;
-        //     }
-        // // }
-        // return _allEvaluatedProperties;
     }
 
     private class ProjectPropertiesDictionary : IDictionary<string, string>
@@ -69,7 +63,7 @@ public static class TaskExtensions
 
         public virtual string this[string key]
         {
-            get => _dictionary.ContainsKey(key) ? _dictionary[key] : string.Empty;
+            get => _dictionary.TryGetValue(key, out var value) ? value : string.Empty;
             set => _dictionary[key] = value;
         }
 

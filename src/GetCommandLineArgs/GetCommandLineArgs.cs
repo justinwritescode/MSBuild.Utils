@@ -6,7 +6,7 @@
  *
  *   Author: Justin Chase <justin@justinwritescode.com>
  *
- *   Copyright © 2022 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
@@ -14,6 +14,7 @@ namespace MSBuild.Utils;
 
 // Taken from https://stackoverflow.com/questions/3260913/how-to-access-the-msbuild-command-line-parameters-from-within-the-project-file-b
 using System;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Xml;
@@ -21,7 +22,7 @@ using Microsoft.Build.Evaluation;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 using MSBuild.Extensions;
-using static MSBuild.Constants.PropertyNames;
+using static MSBuild.Constants.MSBuildPropertyNames;
 
 public sealed class GetCommandLineArgs : MSBTask, IEqualityComparer<string>
 {
@@ -46,7 +47,12 @@ public sealed class GetCommandLineArgs : MSBTask, IEqualityComparer<string>
         MSBuildProjectFullPath
     };
 
-    private string[] ArgsToRemove => _argsToRemove.Concat(PropertiesToRemove.Select(p => AllEvaluatedProperties[p])).ToArray();
+    private string[] ProjectFilePermutations => new[] {
+        this.BuildEngine.ProjectFileOfTaskNode,
+        Path.GetFileName(this.BuildEngine.ProjectFileOfTaskNode)
+    };
+
+    private string[] ArgsToRemove => _argsToRemove.Concat(PropertiesToRemove.Select(p => AllEvaluatedProperties[p])).Concat(ProjectFilePermutations).ToArray();
 
     [Output]
     public ITaskItem[] CommandLineArgs { get; private set; } = Array.Empty<ITaskItem>();
@@ -60,7 +66,7 @@ public sealed class GetCommandLineArgs : MSBTask, IEqualityComparer<string>
     {
         var commandLineArgs = Environment.GetCommandLineArgs().Except(ArgsToRemove, this);//.Except(new[] { "/Users/david/GitHub/justinwritescode/libs/src/MSBuild.Utils/src/GetCommandLineArgs/GetCommandLineArgs.csproj" });
         CommandLineArgs = commandLineArgs.Select(a => new TaskItem(a)).ToArray();
-        FullCommandLine = Environment.CommandLine;
+        FullCommandLine = string.Join(" ", Environment.GetCommandLineArgs());
         Log.LogMessage(MessageImportance.High, $"Full command line: *{FullCommandLine}*");
         Log.LogMessage(MessageImportance.High, $"Command line args: {string.Join(" ", commandLineArgs)}");
         Log.LogMessage(MessageImportance.High, $"Properties to remove: {string.Join(",\n", PropertiesToRemove.Select(p => $"{p}: {AllEvaluatedProperties[p]}"))}");
