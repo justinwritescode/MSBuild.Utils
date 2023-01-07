@@ -18,7 +18,7 @@
       <OutputPath>lib/</OutputPath>
       <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
       <Description>Provides a task and a target that put the command line arguments to the MSBuild process into the items and property "CommandLineArgs."</Description>
-      <SignAssembly>false</SignAssembly>
+      <!-- <SignAssembly>false</SignAssembly> -->
     </PropertyGroup>
     <ItemGroup>
       <PackageTag Include="commandline" />

@@ -5,12 +5,8 @@
   },
   "compilationOptions": {
     "defines": [
-      "TRACE",
-      "DEBUG",
-      "LOCAL",
-      "TRACE",
-      "DEBUG",
-      "LOCAL",
+      "RELEASE",
+      "PRODUCTION",
       "TRACE",
       "NET7_0",
       "NET7_0_OR_GREATER",
@@ -22,7 +18,7 @@
       "NETSTANDARD1_5_OR_GREATER",
       "NETSTANDARD1_3",
       "NETSTANDARD1_3_OR_GREATER",
-      "LOCAL",
+      "RELEASE",
       "NET",
       "NET7_0",
       "NETCOREAPP",
@@ -41,7 +37,7 @@
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
-    "optimize": false,
+    "optimize": true,
     "keyFile": "/Users/justin/GitHub/justinwritescode/assets/JustinWritesCode.snk",
     "emitEntryPoint": false,
     "xmlDoc": true,
@@ -49,7 +45,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "GetCommandLineArgs/0.0.1.0": {
+      "GetCommandLineArgs/0.0.0.0": {
         "dependencies": {
           "GitInfo": "2.2.0",
           "MSBuild.Extensions": "1.0.0",
@@ -62,7 +58,7 @@
           "MinVer": "4.1.0",
           "NuGetizer": "0.9.1",
           "Stef.Validation": "0.1.0",
-          "MSBuild.Extensions.Reference": "0.0.1.0",
+          "MSBuild.Extensions.Reference": "0.0.0.0",
           "Microsoft.CSharp": "7.0.0.0",
           "Microsoft.VisualBasic.Core": "12.0.0.0",
           "Microsoft.VisualBasic": "10.0.0.0",
@@ -1055,11 +1051,11 @@
           "System.Xml.ReaderWriter": "4.3.1"
         }
       },
-      "MSBuild.Extensions.Reference/0.0.1.0": {
+      "MSBuild.Extensions.Reference/0.0.0.0": {
         "runtime": {
           "MSBuild.Extensions.dll": {
-            "assemblyVersion": "0.0.1.0",
-            "fileVersion": "0.0.1.0"
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         },
         "compile": {
@@ -2058,7 +2054,7 @@
     }
   },
   "libraries": {
-    "GetCommandLineArgs/0.0.1.0": {
+    "GetCommandLineArgs/0.0.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -2784,7 +2780,7 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "MSBuild.Extensions.Reference/0.0.1.0": {
+    "MSBuild.Extensions.Reference/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

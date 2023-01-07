@@ -1,10 +1,9 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetCommandLineArgs", "GetCommandLineArgs.csproj", "{A7278FE0-81B3-4DDE-B6D9-DD2A167D018C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08F47497-A995-4B27-99F9-4B923B7F5962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.Extensions", "..\MSBuild.Extensions\MSBuild.Extensions.csproj", "{3A1651B0-9366-4A93-89D9-CFE9DF9C5641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Extensions", "..\MSBuild.Extensions\MSBuild.Extensions.csproj", "{3A1651B0-9366-4A93-89D9-CFE9DF9C5641}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08F47497-A995-4B27-99F9-4B923B7F5962}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
