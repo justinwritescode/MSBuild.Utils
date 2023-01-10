@@ -31,8 +31,8 @@
     <!-- <PackageReference Include="System.AppDomain" VersionOverride="[2.0.9,)" />
     <PackageReference Include="System.Xml.ReaderWriter" VersionOverride="[4.3.1,)" /> -->
     <!-- <ProjectReference Include="../MSBuild.Extensions/MSBuild.Extensions.csproj" Condition="'$(Configuration)' != 'Release'" /> -->
-    <!--<PackageReference Include="MSBuild.Extensions" />-->
     <!-- <ProjectReferemce Include="../MSBuild.Extensions/MSBuild.Extensions.csproj" /> -->
+    <PackageReference Include="MSBuild.Extensions" IncludeAssets="ContentFiles;Build" ExcludeAssets="Native;Lib;Compile;Analyzers" />
   </ItemGroup>
   <ItemGroup Label="Global Usings">
     <Using Include="Microsoft.Build.Utilities.Task" Alias="MSBTask" />
@@ -55,7 +55,7 @@
     <Message Importance="High" Text="@CommandLineArgs: @(CommandLineArgs)" />
     <Message Importance="High" Text="FullCommandLine: $(FullCommandLine)" />
   </Target>
-  <ItemGroup>
+  <!-- <ItemGroup>
     <Reference Include="MSBuild.Extensions" HintPath="../MSBuild.Extensions/lib/netstandard1.5/MSBuild.Extensions.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -64,5 +64,5 @@
       <CopyToPublishDirectory></CopyToPublishDirectory>
       <SetConfiguration></SetConfiguration>
     </ProjectReference>
-  </ItemGroup>
+  </ItemGroup> -->
 </Project>

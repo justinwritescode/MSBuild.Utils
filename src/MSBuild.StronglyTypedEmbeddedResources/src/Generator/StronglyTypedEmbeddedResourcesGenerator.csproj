@@ -6,7 +6,7 @@
  
    Author: Justin Chase <justin@justinwritescode.com>
    
-   Copyright © 2022 Justin Chase, All Rights Reserved
+   Copyright © 2022-2023 Justin Chase, All Rights Reserved
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 <Project Sdk="Microsoft.NET.Sdk">
@@ -37,7 +37,7 @@
     <PackageReference Include="JustinWritesCode.ComponentModel" />
     <PackageReference Include="JustinWritesCode.Enumerations.Enumeration" />
     <PackageReference Include="JustinWritesCode.Enumerations.CodeGeneration" IncludeAssets="Analyzers" PrivateAssets="All" />
-    <PackageReference Include="JustinWritesCode.System.Extensions" />
+    <PackageReference Include="JustinWritesCode.System.Extensions" ExcludeAssets="ContentFiles" />
   </ItemGroup>
 
   <ItemGroup>
