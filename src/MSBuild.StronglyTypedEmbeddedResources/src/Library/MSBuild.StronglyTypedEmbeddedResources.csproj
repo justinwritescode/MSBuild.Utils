@@ -6,7 +6,7 @@
  
    Author: Justin Chase <justin@justinwritescode.com>
    
-   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+   Copyright © 2022 Justin Chase, All Rights Reserved
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 <Project Sdk="Microsoft.NET.Sdk">
@@ -34,7 +34,7 @@
     <ProjectReference Include="../../../../../Types/src/Core/ComponentModel/JustinWritesCode.ComponentModel.csproj" />
     <ProjectReference Include="../../../../../Types/src/Enumerations/Enumeration/JustinWritesCode.Enumerations.Enumeration.csproj" />
     <ProjectReference Include="../../../../../Types/src/Enumerations/CodeGeneration/JustinWritesCode.Enumerations.CodeGeneration.csproj" TreatAsPackageReference="true" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="../../../../../Types/src/Extensions/System.Extensions.csproj" />
+    <ProjectReference Include="../../../../../Types/src/Extensions/JustinWritesCode.System.Extensions.csproj" />
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)' != 'Testing' And '$(Configuration)' != 'Local'"> 
     <PackageReference Include="JustinWritesCode.ComponentModel" />
